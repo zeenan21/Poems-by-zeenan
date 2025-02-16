@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haa Meem Ul Karim Zeenan's Poems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Lora', serif;
+      background-color: #000; /* Black background */
+      margin: 0;
+      padding: 0;
+      color: #fff; /* White text */
+    }
+    header {
+      background-color: #000;
+      padding: 40px 0;
+      text-align: center;
+      color: #fff;
+      border-bottom: 2px solid #FFCC00; /* Yellow accent */
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    /* Language Selector */
+    .language-selector {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .language-selector button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: 1px solid #FFCC00;
+      background-color: #111;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .language-selector button:hover {
+      background-color: #222;
+    }
+    /* Poem List */
+    .poem-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .poem-item {
+      background-color: #111;
+      border: 1px solid #FFCC00; /* Yellow border */
+      margin: 15px;
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .poem-item:hover {
+      background-color: #222;
+      transform: scale(1.05);
+    }
+    .poem-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+    /* Poem Content */
+    .poem-content {
+      display: none;
+      padding: 20px;
+      background-color: #111;
+      margin: 30px auto;
+      border: 1px solid #FFCC00;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
+      overflow: auto;
+    }
+    /* Use <pre> to preserve line breaks and spacing */
+    .poem-content pre {
+      white-space: pre-wrap;
+      font-family: 'Lora', serif;
+      color: #fff;
+      margin: 0;
+    }
+    .back-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #FFCC00; /* Yellow button */
+      color: #000; /* Black text on button */
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .back-link:hover {
+      background-color: #e6b800;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #000;
+      color: #fff;
+      margin-top: 40px;
+      border-top: 2px solid #FFCC00;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Haa Meem Ul Karim Zeenan's Poems</h1>
+  </header>
+
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button onclick="showLanguage('bangla')">Bangla Poems</button>
+    <button onclick="showLanguage('english')">English Poems</button>
+  </div>
+
+  <!-- Bangla Poems List -->
+  <div id="bangla-list" class="poem-list">
+    <div class="poem-item" onclick="showPoem('b1')">
+      <div class="poem-title">সবে পাগল</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b2')">
+      <div class="poem-title">কাহার বাড়ি?</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b3')">
+      <div class="poem-title">কোনো একদিন</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b4')">
+      <div class="poem-title">ফাল্গুন</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b5')">
+      <div class="poem-title">মনের মায়া</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b6')">
+      <div class="poem-title">কতোদিন</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b7')">
+      <div class="poem-title">বিশ্ব</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('b8')">
+      <div class="poem-title">কুড়ি বৎসর</div>
+    </div>
+  </div>
+
+  <!-- English Poems List -->
+  <div id="english-list" class="poem-list" style="display: none;">
+    <div class="poem-item" onclick="showPoem('e1')">
+      <div class="poem-title">Seven heavens</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('e2')">
+      <div class="poem-title">Curly Angels</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('e3')">
+      <div class="poem-title">Separate Paths</div>
+    </div>
+    <div class="poem-item" onclick="showPoem('e4')">
+      <div class="poem-title">Her</div>
+    </div>
+  </div>
+
+  <!-- Full Poem Contents -->
+
+  <!-- b1: সবে পাগল -->
+  <div id="b1" class="poem-content">
+    <h2>সবে পাগল</h2>
+    <pre>
+সবে পাগল হইলাম, কে জানে দেখা কি বাকি।।
+পাগল কি আর জাত চিনে ?
+চিনে আর কিছু??
+সবে পাগল হইলাম, কে জানে দেখা কি বাকি।।
+আমার পাগল রূপে আমি , 
+না জানি কি দেখবো আজীবন ,
+পাগলের সত্য না মিথ্যে দুনিয়া , 
+বুঝবো যেনো আজই।।
+পাগল পাগল মনটাই পাগল ,
+এখন এ পাগল বুঝবে নিজের দুনিয়া ,
+হাসবে কাদবে সবই দেখবে , 
+থাকবে না কেউ আপন !
+আপন কইতে বুঝবে হাওয়া আর দুনিয়া শুধু । 
+কিসের মোহ কিসের মায়া ?
+এখন বুঝি না কিছুই বোকা !
+কিসের মোহ কিসের মায়া ?
+এখন বুঝি না কিছুই বোকা !
+আরে লোকে বলে পাগলে বোকা ,
+তবে কি দেখেছে তারা নিজেদের?
+এই বোকাদের সুখের দুনিয়ায় ,
+এই বোকাদের সুখের দুনিয়ায় , 
+আমার মতোরেই  শুধু পাগল কয় ।
+সবে পাগল হইলাম, কে জানে দেখা কি বাকি।।
+আরে শুনো বোকা ,
+আরে শুনো বোকা ,
+আমার এই দুনিয়ায় নেই কোনো মোহ-মায়া ,
+না আমি বন্দী শিকলে !
+তোমাদের দুনিয়ায় সবই ভ্রম ,
+আমার দুনিয়ায় সবই আসল ,
+তবু বোকা কয় আমি পাগল !
+সবে পাগল হইলাম, কে জানে দেখা কি বাকি।।
+সবে পাগল হইলাম ,
+এই আমার দুনিয়া !!!!
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b2: কাহার বাড়ি? -->
+  <div id="b2" class="poem-content">
+    <h2>কাহার বাড়ি?</h2>
+    <pre>
+কাহার বাড়ি , কাহার ঘর ?
+কাহার কাছে চাবি - তালা?
+কে দিলো মনরে তালা ,
+হে কথা বুঝি না গো বুঝি না।
+আসিলো যহন কুড়ি আমার ,
+ভাবি নাই রে এত কিছু !
+মনের মনের ডানা ধরে
+উড়িতাম রে তহন । 
+কাহার বাড়ি,কাহার ঘর?
+কাহার কাছে চাবি - তালা?
+হে পারের মালিক কেদা ?
+কে দিবো সাজা আমায় ?
+ভাইবা ভাইবা কাটাই, 
+সত্তুর হলো নাই কেউ পাশে ।
+ভাবি আমি ভেবে যাই , 
+কাহার বাড়ি, কাহার ঘর ?
+কাহার কাছে চাবি - তালা?
+শূন্য হাতে আমায় দিবো 
+নাকি কোনো জায়গা রে ! 
+তাহা ভেবে দিন কাটে , 
+কবে উড়ান ছেড়ে ?
+খুঁজে কাহারে ,
+কবে জানি পাবো তারে ?
+হে ভেবেই দিন যায়,
+কাহার বাড়ি , কাহার ঘর ?
+কাহার কাছে চাবি - তালা?
+কে দিলো অন্তর তালা ,
+বুঝি না গো বুঝি না।
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b3: কোনো একদিন -->
+  <div id="b3" class="poem-content">
+    <h2>কোনো একদিন</h2>
+    <pre>
+যেতে যেতে রিকশায় তুমি,
+ভাবছো কি আনমনে এতো ?
+ভাবনা তোমার হয়না কি শেষ? 
+ভেবে তা কাটিয়ে দেই আমার দিন ,
+দেখি তোমারে পাশ থেকে ,
+দেখো না তো আমায় তুমি ,
+কি ভাবো এতো তুমি ? 
+দেখতে তাকিয়ে পাশে যদি ,
+দেখতে পেতে আমায় তুমি ।
+সাদা-কমলায় সেজে তুমি ,
+বলো মানায় কি এতো ভাবনায় তোমায় ?
+মনের ভাবনা করে ,
+যেতে পারো আমার সাথে ।
+আর কি বলি বলো তোমায় ?
+হারিয়ে যাই যে দেখে তোমায় ।
+তুমি ভেসে যাও ,তোমার ভাবনায় ।
+আমি ভাসি তোমার মায়ায় ।
+দেখি তোমায় শুধু ,
+তুমি দেখো না আমারে ।
+আমার দিন ভাবনায় তুমি ,
+আর তোমার দিন ভাবনায় কি জানি?
+তোমায় দেখে চারপাশে বসন্ত আমার ,
+তোমার পাশে যেনো কেবল কালো ছায়া !
+কি ভেবে ভেবে যাও গো তুমি ,
+যায় না সেই কালো ছায়া ?
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b4: ফাল্গুন -->
+  <div id="b4" class="poem-content">
+    <h2>ফাল্গুন</h2>
+    <pre>
+আবার এলো চলে ফাল্গুন ,
+তারই সাথে যেনো এলো ,
+সেই পুরানো ইচ্ছে ফিরে ,
+তাকে সেই লাল হলুদ শাড়িতে,
+দেখতে ইচ্ছে করে আবার ।
+আবার যেনো ইচ্ছে করে ,
+তার সেই কাজলে পূর্ণ ,
+মায়াবী চোখ দেখিবার ।
+ইচ্ছে করে বলি আবারো ,
+বেশ দারুন লাগছে
+গাঁদা তোমার খোঁপায় ।
+আবার যেনো ইচ্ছে করে ,
+হাত ধরে তোমার ,
+ঘুরে আসি বইমেলায় ।
+প্রেম নাহি বুঝি ,
+নাহি বুঝি কিছুই।
+তবে যেনো ফাল্গুন,
+নিয়ে আসে তোমার স্মৃতি বারবার ।
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b5: মনের মায়া -->
+  <div id="b5" class="poem-content">
+    <h2>মনের মায়া</h2>
+    <pre>
+মনের মায়ায় পুরলাম আমি, 
+হলাম যে কালো ছাই !
+ওহ আমার প্রিয়তমা ,
+কেনো আসো স্বপ্নে এতো ?
+বকুল ফুলের বাগানে , 
+যেনো দেখেছিলাম তাকে !
+সেই দিন হতে পারিনি,
+যেনো আজও তারে ভুলিতে !
+আমার মোহ মায়ার মানুষ ,
+কে তুমি বলো গো?
+তাঁরই আঁখিতে ,
+দেখো নকশা করেছে তারারা যে !
+চন্দ্রি এসে লজ্জা পেলো , 
+তাঁরই প্রেমে পরে যে  !
+হায়রে হায়রে ,
+আমি দেখি তাহারে !
+কতোই না মনের প্রিয় সে !
+আমি ভাবি তাহারে, 
+দেখি যারে চারিদিকে !
+মনের প্রিয়তমা তুমি ,
+আছো বসে কোন বাগানে ,
+রাজকন্যা সেঁজে বলো ! 
+ভ্রমর মৌমাছি এসো না , 
+তার পাশে এসে বসো না !
+তার পাশেতে দুলছে দেখো, 
+কতো নানা রকমের ফুল যে দেখো !
+তার কন্ঠ শুনিতে , 
+এসে বসেছে পাখি যে !
+ওরে আমায় বোকা বলো ,
+তবে বলো না করো প্রেম তুমি !
+আমি যে পারি না , 
+ছাড়া থাকতে তারে বিনা ! 
+ওরে ও  কর্তা আমার , 
+নিয়ো না আঁখি আমার ! 
+তারে না দেখিয়া পারুম না ! 
+আমার হৃদয় স্মৃতি 
+জুড়ে কেবল দিয়ো তারে ।
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b6: কতোদিন -->
+  <div id="b6" class="poem-content">
+    <h2>কতোদিন</h2>
+    <pre>
+কতোদিন হলো দেখি না তোমায় ,
+শুনি না তোমার কন্ঠ ,
+একই পথ ধরে চলি না দুজনে ,
+তবে ভেবে কি দেখেছো তুমি ,
+কি হবে আবার যখন হবে দেখা ?
+সেই রাত যেনো পূর্ণিমার আলোয়
+ফুটবে ফুলের মতো করে ,
+চারিদিকে যেনো বইবে ,
+বসন্তের মিষ্টি বাতাস ,
+মনে বাঁধবে যেনো , 
+শীতের সকালের আলোর উষ্ণতা ,
+আবার যেনো তোমার চোখের ,
+সেই মায়া জালেই আটকিয়ে পরবো ,
+আবার যেনো বারবার বলবো , 
+চলো না , হাত ধরে হেঁটে যাই 
+আর কিছুক্ষণ একসাথে ,
+বারবার যেনো ,
+থেকে যেতে চাইবো তোমার সাথে ,
+সময় কে যেনো বলে উঠবো ,
+আর কিছুক্ষণ থেকে যাও স্থির ,
+তার সাথে আছি ভাই ,
+যেয়ো না এতো দ্রুত তুমি ।
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b7: বিশ্ব (merged with ধা পা মা গা) -->
+  <div id="b7" class="poem-content">
+    <h2>বিশ্ব</h2>
+    <pre>
+বিশ্ব বিপ্লব যেনো নিচ্ছে জন্ম ,
+ধর্ম , কর্ম আইন কানুন 
+যেনো সবই হচ্ছে নিচু ,
+হুংকার দিতে দিতে 
+পথে মশাল জ্বালিয়ে 
+নিভেতেছে অমাবস্যা , 
+রক্তে শিরায় শিরায় ,
+যেনো থম থম করছে অগ্নি স্বয়ং!
+যেনো নতুন প্রজন্ম দেখিবে 
+নতুন এক দিন ,
+যেই দিন থাকিবে না 
+কোনো মানুষ রূপ ধারী রাক্ষস !
+কোনো ভয় নেই। ,
+বাজাও ঢোল ,
+সুরে সুরে বাতাসে যেনো বয়েছে 
+মহাবিপ্লবের হুংকার ! 
+কোথায় পালাবে ,
+মিথ্যে আইন শৃঙ্খল ,
+পালাবে কোথায় 
+অত্যাচারের অত্যাচার ? 
+সবই যেনো ধ্বংস 
+মানুষের ক্ষোভের অগ্নি রক্তে !
+
+পাগলে পাগল যেনো আজ সকলে 
+মানে না কোনো যেনো শৃঙ্খল তারা ,
+ওরে বিশ্ব যেনো সাক্ষী আজের 
+ভুলবে না হাজারো সহস্র শতাব্দীতেও ,
+অত্যাচার যেনো আজ করছে 
+মৃত্যুর পাঞ্জা, 
+যেই মৃত্যু আপন করে নিয়েছে , 
+শত হাজার মানুষেরা!
+ 
+ওরে তাকিয়ে দেখো পূর্ব দিকে ,
+উঠে যাবে এক নতুন দিনের সূর্য ,
+থাকবে না সেদিন কোনো ভয় ,
+থাকবে শুধু জয়কার , 
+মানুষ তুমি অমর , 
+অমর তোমার রক্ত  ,
+তুমি জিন্দাবাদ ! 
+
+মিথ্যে ইতিহাস হবে ধ্বংস , 
+বিজয় হবে সত্যের ,
+থাকবে না  কোনো অন্যায় , 
+মানবে না কোনো বৈষম্য ,
+হারাবে না আর কোনো মা তার সন্তান !
+এমন দিনই নিবে জন্ম !
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- b8: কুড়ি বৎসর -->
+  <div id="b8" class="poem-content">
+    <h2>কুড়ি বৎসর</h2>
+    <pre>
+যদি কুড়ি বৎসর পর এসে বলো আমায় ,
+আমি কি ভালোবাসি তখনো তোমায় ?
+তবে জেনে রেখো তোমার প্রশ্নের জবাব হবে হ্যাঁ ।
+যদি বলো আমায় মনে করেছি 
+কি আজও একদিনও তোমায় ?
+আমি বলবো এমন দিন যায়নি আমার ,
+এমন ঋতু আসেনি এক বৎসরেও,
+যেদিন লেখিনি কবিতা তোমায় ভেবে !
+যদি আবারো জিজ্ঞাসা করো আমায় ,
+কি বা আগলে রেখেছে আমায় এতো বৎসর?
+আসা করি জানো তাহার উত্তর ,
+তাহা হলো তোমার আঁখি দুটো !
+যদি আসিয়া বলো আজও 
+কি বাসতে চাও আমায় ভালো ?
+বলিবো যেনো ,
+মরণও যদি  হয় দেহের আমার ,
+রুহু যেনো ঘুরিবে তোমার  আসায় !
+যদি করো জিজ্ঞাসা আমায়,
+কুড়ি বৎসর পরে , 
+করি কি কোনো নেশা আমি ?
+আমি বলিবো হাসিতে হাসিতে , 
+তোমার নেশাই পারিলাম না ছাড়িতে ,
+আবার কি বা করিবো নেশা অন্য !
+কুড়ি বৎসর হোক কিংবা সহস্র ,
+যেদিন আসিবে তুমি , 
+জবাব আমার হবে একই ।
+হৃদয় থাকিবে তোমার কেবল ,
+ডায়েরির পৃষ্ঠ থাকিবে ,
+তোমায় নিয়ে কবিতায় পূর্ণ !
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- e1: English Poem - Seven heavens -->
+  <div id="e1" class="poem-content">
+    <h2>Seven heavens</h2>
+    <pre>
+Seven heavens,
+I swear, I shall not lie,
+For there’s a divine who claimed my heart,
+A beauty far beyond the universe,
+Where galaxies bow in her presence,
+And stars whisper her name in their shimmer.
+
+Her voice, a melody celestial,
+Like angelic choirs serenading the night.
+Her smile, a sunbeam piercing the clouds,
+Enough to render my soul breathless,
+As though the world itself pauses to admire her grace.
+
+Oh, dear angels, forgive my defiance,
+But none in heaven nor earth can rival her.
+She is the muse of my dreams,
+The keeper of my heart’s sacred rhythm.
+
+I vow with unwavering certainty:
+Through countless centuries,
+Through lifetimes unending,
+No love will ever match
+The way I cherish her,
+The other half of my soul,
+My eternal sanctuary.
+
+If the universe were to crumble,
+And time itself fade into nothingness,
+Still, my love for her would persist,
+An immortal flame,
+Dancing in the void,
+Guided by the memory of her.
+In her eyes, I find my home,
+In her touch, my universe finds purpose.
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- e2: English Poem - Curly Angels -->
+  <div id="e2" class="poem-content">
+    <h2>Curly Angels</h2>
+    <pre>
+Curly Angel,
+Don’t be crazy.
+This world isn’t filled with greatness—
+People seeking attention,
+All in the name of peace.
+What once had meaning
+Is now just a game for everyone.
+
+I’m not saying I’m a saint,
+I’ve done my sins too.
+Forgive me, if you can,
+But now I see—
+I was just blind,
+Chasing what others needed from you,
+Not what you wanted to be.
+
+Curly Angel,
+Don’t be a fool.
+They’ll take advantage,
+Make you forget
+Who you really are.
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- e3: English Poem - Separate Paths -->
+  <div id="e3" class="poem-content">
+    <h2>Separate Paths</h2>
+    <pre>
+If we ever cross paths again, 
+I'll hold you close, 
+As if the universe might fade away 
+And the Time?
+It could freeze in that one light!
+
+If I die in that moment, 
+Let me rest beside you, Love. 
+In you, I'd find my peace, 
+The love that conquers seven seas.
+
+Let the Autumn wind whisper our names, 
+As stars in the heavens softly sigh. 
+Let the angels say 
+They've the bond beyond from heaven. 
+
+If fate pulls us far apart,
+Remember the words of my heart:
+In every breath, in every beat,
+In every universe, in every life,
+I wanna be with you!
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <!-- e4: English Poem - Her -->
+  <div id="e4" class="poem-content">
+    <h2>Her</h2>
+    <pre>
+In the eyes of people,
+She’s the angel of heaven,
+But in my eyes,
+From the depths of my heart,
+I know she’s far more divine
+Than any angel or paradise.
+Even the skies of heaven
+Can’t compete with her light,
+For she shines with a brilliance
+That fills my world with joy.
+
+Her laughter dances like sunlight,
+Chasing shadows from my mind,
+And the way she makes me feel happy,
+It’s a magic I can’t define.
+I’ve lost myself completely
+In her eyes,
+In her beauty,
+In her spirit,
+No angel can do this!
+
+Her presence is a melody,
+A sweet, enchanting song,
+Each note a gentle whisper,
+Telling me where I belong.
+Maybe it would be a sin for me
+If I compared her to an angel,
+For she’s a goddess among mortals,
+A treasure beyond measure.
+
+So in the eyes of people,
+She may wear the title of angel,
+But to me, she’s far more,
+A love that’s truly celestial.
+    </pre>
+    <a href="javascript:void(0);" class="back-link" onclick="hidePoems()">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Haa Meem Ul Karim Zeenan</p>
+  </footer>
+
+  <script>
+    // Show the selected poem content and scroll to it
+    function showPoem(poemId) {
+      // Hide all poem contents
+      var poems = document.querySelectorAll('.poem-content');
+      poems.forEach(function(poem) {
+        poem.style.display = 'none';
+      });
+      // Display the selected poem
+      var selected = document.getElementById(poemId);
+      selected.style.display = 'block';
+      selected.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Hide all poem contents (Back to Home)
+    function hidePoems() {
+      var poems = document.querySelectorAll('.poem-content');
+      poems.forEach(function(poem) {
+        poem.style.display = 'none';
+      });
+    }
+    // Show language-specific poem list
+    function showLanguage(lang) {
+      if(lang === 'bangla') {
+        document.getElementById('bangla-list').style.display = 'flex';
+        document.getElementById('english-list').style.display = 'none';
+      } else if(lang === 'english') {
+        document.getElementById('bangla-list').style.display = 'none';
+        document.getElementById('english-list').style.display = 'flex';
+      }
+      // Hide any open poem content when switching language
+      hidePoems();
+    }
+    // Default: show Bangla poems on page load
+    window.onload = function() {
+      showLanguage('bangla');
+    };
+  </script>
+</body>
+</html>
